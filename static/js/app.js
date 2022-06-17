@@ -1,40 +1,6 @@
 // Read in samples.json from the URL
 const samples = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 
-
-// // const dataset = d3.json(samples)
-// console.log(names)
-
-// // console.log(x)
-// // let id = data.metadata.map(function (row){
-// //         return row.id
-// //       });
-
-// //       console.log(id);
-
-// // Initializes the page with a default sample
-// function init() {
-    
-//         let li2 = d3.select("ul").append("li").text("Another new item!");
-
-//         d3.select("selDataset").attr("value", "https://nytimes.com").text("Now this is a link to the NYT!!");
-//   }
-
-//   function init() {
-//         let dropDown = d3.select("#selDataset");
-//         d3.json("./samples.json").then((Data) => {
-//             let dataNames = Data;
-//             console.log(Data.metadata)
-//             console.log(Data.names)
-//             console.log(Data.samples[0])
-//             console.log(Data)
-//             console.log(Data)
-
-
-
-//         })
-//   }
-
   // OUTLINE
 // 1.  Webpage will have the following:
 //     *  Dropdown that will allow selection of a name/id
@@ -94,8 +60,8 @@ function init(){
     });
 
     // run functions to generate plots
-    // createScatter('940')
-    // createBar('940')
+    createScatter('940')
+    createBar('940')
     createSummary('940')
 
 }
@@ -114,14 +80,78 @@ function optionChanged(newID){
 
 function createScatter(id){
     // code that makes scatter plot at id='bubble'
+    d3.json(samples).then(function(data) {
+        for(let i=0; i<data.samples.length; i++){
+            if (data.samples[i].id == id) {
+                let ids = data.samples[i].otu_ids;
+                let values = data.samples[i].sample_values;
+                let labels = data.samples[i].otu_labels;
 
+                var trace1 = {
+                    x: ids,
+                    y: values,
+                    text: labels,
+                    mode: 'markers',
+                    marker: {
+                      color: ids,
+                      size: values,
+                      colorscale: 'Earth'
+                    }
+                  };
+                  
+                  var data = [trace1];
+                  
+                  var layout = {
+                    // title: list(text = "OTU ID", y = 0.05),
+                    title: {'text': "OTU ID",
+                        'y': 0.05},
+                    showlegend: false,
+                  };
+                  
+                  Plotly.newPlot('bubble', data, layout);
+
+              } else {};
+    }})
     // checking to see if function is running
     console.log(`This function generates scatter plot of ${id} `)
 }
 
 function createBar(id){
     // code that makes bar chart at id='bar'
+    d3.json(samples).then(function(data) {
+        for(let i=0; i<data.samples.length; i++){
+            if (data.samples[i].id == id) {
+                let ids = data.samples[i].otu_ids.slice(0,10);
+                let values = data.samples[i].sample_values.slice(0,10);
+                let labels = data.samples[i].otu_labels.slice(0,10);
 
+                let reversedIds = ids.reverse();
+                let reversedValues = values.reverse();
+                let reversedLabels = labels.reverse();
+                
+                let finalIds = reversedIds.map(function(ids) {
+                    return `OTU ${ids}`;
+                    });
+                
+                let trace1 = {
+                    x: reversedValues,
+                    y: finalIds,
+                    text: reversedLabels,
+                    type: "bar",
+                    orientation: "h"
+                  };
+
+                let traceData = [trace1];
+
+                let layout = {
+                    barmode: "group"
+                  };
+
+                Plotly.newPlot('bar', traceData, layout);
+
+              } else {};
+    }})
+            
     // checking to see if function is running
     console.log(`This function generates bar chart of ${id} `)
 
