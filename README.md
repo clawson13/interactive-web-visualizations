@@ -12,7 +12,7 @@ HTML, JavaScript, Plotly.
 
 ## Web Application Address
 
-* ![https://clawson13.github.io/interactive-web-visualizations/](https://clawson13.github.io/interactive-web-visualizations/)
+* https://clawson13.github.io/interactive-web-visualizations/
 
 ## Landing Preview
 
