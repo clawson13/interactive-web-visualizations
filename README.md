@@ -1,29 +1,25 @@
-# interactive-web-visualizations
+# Belly Button Biodiversity: An Interactive Web Visualization
 
-# Mission to Mars: Web Scraping Challenge
-
-Homework for Boot Camp Week 12: Web Scraping and MongoDB; Submitted by Corey Lawson-Enos
+Homework for Boot Camp Week 14: JavaScript and Plotly; Submitted by Corey Lawson-Enos
 
 ## Summary
-* Web application that scrapes four websites for current Mars news, facts, and imagery, and displays the information in a single HTML page (see also Sources below.)
+* Web application that calls sample data of microbial species found in test subjects' navels via API.
+* Charts individual subject's demographics and their unique microbial concentrations--operational taxonomic units, or OTUs.
+* Includes a washing frequency indicator for immediate, visual comparison with charted OTU concentration levels.
 
 ## Technologies
-HTML, MongoDB, Flask, Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
+HTML, JavaScript, Plotly.
 
-## Web Application Access
+## Web Application Address
 
-* Open app.py file from Terminal/Command Prompt: python app.py
-* Copy running URL (screenshot below), paste to browser:
-
-![Terminal Example](Missions_to_Mars/images/terminal_example.png)
+* ![https://clawson13.github.io/interactive-web-visualizations/](https://clawson13.github.io/interactive-web-visualizations/)
 
 ## Landing Preview
 
-![Landing Preview](Missions_to_Mars/images/index_screenshot.png)
+![Landing Preview](images/landing.png)
 
-## Sources
+## Source
 
-* Mars Planet Science: https://redplanetscience.com/
-* Caltech Jet Propulsion Laboratory Images: https://spaceimages-mars.com/
-* Galaxy Facts: https://galaxyfacts-mars.com/
-* GUSS Science Center: https://marshemispheres.com/
+* Hulcr, J. et al. (2012) A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable. 
+* Retrieved from: http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/
+* JSON Link: https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json
