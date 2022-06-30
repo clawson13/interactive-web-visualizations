@@ -1,6 +1,6 @@
 # Belly Button Biodiversity: An Interactive Web Visualization
 
-Homework for Boot Camp Week 14: JavaScript and Plotly; Submitted by Corey Lawson-Enos
+Prepared by Corey Lawson-Enos
 
 ## Summary
 * Web application that calls sample data of microbial species found in test subjects' navels via API.
@@ -8,7 +8,7 @@ Homework for Boot Camp Week 14: JavaScript and Plotly; Submitted by Corey Lawson
 * Includes a washing frequency indicator for immediate, visual comparison with charted OTU concentration levels.
 
 ## Technologies
-HTML, JavaScript, Plotly.
+HTML, JavaScript, Plotly
 
 ## Web Application Address
 
