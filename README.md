@@ -8,7 +8,7 @@ Prepared by Corey Lawson-Enos
 * Includes a washing frequency indicator for immediate, visual comparison with charted OTU concentration levels.
 
 ## Technologies
-HTML, JavaScript, Plotly
+HTML, JavaScript, Plotly.
 
 ## Web Application Address
 
